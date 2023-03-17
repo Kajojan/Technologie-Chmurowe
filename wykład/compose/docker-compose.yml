@@ -1,0 +1,7 @@
+version: '3'
+services:
+  myredis: #nazwa kontenera/serwisu 
+    restart: always
+    image: 'redis:alpine'
+  mynginx:
+    image: 'nginx:alpine'
