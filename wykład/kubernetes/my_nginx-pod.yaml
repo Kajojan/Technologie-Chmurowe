@@ -1,0 +1,13 @@
+apiVersion: v1 
+kind: Pod
+metadata: 
+  name: mynginx-pod
+  labels: 
+    component: web 
+spec: 
+  containers:
+    - name: mynginx
+      image: nginx
+      ports:
+        - containerPort: 80
+          name: gebport
