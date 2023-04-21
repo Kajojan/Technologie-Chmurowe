@@ -18,3 +18,14 @@ EXPOSE 5000
 CMD [ "python3", "main.py" ]
 
 
+FROM nginx:latest
+
+COPY --from=builder /app /app
+
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+ENV PORT=3000
+
+EXPOSE $PORT
+
+CMD ["nginx", "-g", "daemon off;"]
