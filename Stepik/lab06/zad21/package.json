@@ -1,0 +1,13 @@
+{
+    "name": "express-mongo-app",
+    "version": "1.0.0",
+    "main": "server.js",
+    "dependencies": {
+      "express": "^4.17.1",
+      "dotenv": "^16.0.3",
+      "mongoose": "^6.8.1"
+    },
+    "scripts": {
+      "start": "node server.js"
+    }
+  }
