@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 5000
 
-CMD ["python", "flask.py"]
+CMD ["python", "app.py"]
