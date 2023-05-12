@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    environment:
+      POSTGRES_USER: me
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: api
+
+  redis:
+    container_name: redis
+    image: redis
+
+  app:
+    container_name: app
+    build: .
+    environment:
+      REDIS_HOST: redis
+      POSTGRES_USER: me
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: api
+    command: ["npm", "start"]
+    depends_on:
+      - "redis"
+      - "postgres"
+
+  nginx:
+    container_name: nginx
+    build: "./nginx"
+    ports:
+      - "80:80"
+    command: ["nginx", "-g", "daemon off;"]
+    depends_on:
+      - "app"
