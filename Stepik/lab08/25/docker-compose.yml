@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  app:
+    container_name: app
+    build: .
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD", "node", "check.js"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
