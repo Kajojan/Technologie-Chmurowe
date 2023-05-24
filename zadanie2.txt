@@ -1,0 +1,35 @@
+Zadanie (20 pkt)
+
+Rozważmy następujący plik z danymi w formacie json: 
+
+{
+   "data": [
+    {
+        "_id": "200",
+        "userId": "1",
+        "street": "ul. Kwiatowa 5",
+        "city": "Warszawa",
+        "postalCode": "00-001"
+    },
+    {
+        "_id": "201",
+        "userId": "2",
+        "street": "ul. Słoneczna 10",
+        "city": "Kraków",
+        "postalCode": "30-001"
+    }
+  ]
+}
+
+Wykonaj następujące polecenia:
+
+    (1 pkt) Stwórz aplikację REST API w języku JavaScript, która będzie pobierała początkowe dane z podanego pliku w formacie JSON.
+    (5 pkt) Następnie aplikacja powinna nawiązać połączenie z bazą danych MongoDB, wrzucić dane z pliku JSON i udostępniać funkcjonalności wyświetlania oraz usuwania danych.
+    (1 pkt) Cała aplikacja powinna być uruchomiona i zarządzana za pomocą narzędzia Docker Compose. 
+    (3 pkt) Po zaimplementowaniu funkcjonalności, aplikacja powinna zostać umieszczona jako reverse proxy w serwerze nginx. 
+    (7 pkt) W Docker Compose należy uwzględnić budowanie obrazów, uruchomienie bazy danych, zdefiniowanie zmiennych środowiskowych, zarządzanie zależnościami, utworzenie sieci, wolumenów oraz zastosowanie Healthcheck. 
+    (3 pkt) Ostatecznie obraz aplikacji powinien zostać przesłany na serwis Docker Hub w postaci wieloarchitekturowej.
+
+Spakowaną aplikację prześlij przez platformę MSTeams wraz z linkiem do serwisu Docker Hub.
+
+Uwaga: W przypadku nie działania pliku docker-compose.yml, zadanie nie będzie sprawdzane.

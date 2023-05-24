@@ -1,0 +1,18 @@
+{
+    "data": [
+     {
+         "_id": "200",
+         "userId": "1",
+         "street": "ul. Kwiatowa 5",
+         "city": "Warszawa",
+         "postalCode": "00-001"
+     },
+     {
+         "_id": "201",
+         "userId": "2",
+         "street": "ul. Słoneczna 10",
+         "city": "Kraków",
+         "postalCode": "30-001"
+     }
+   ]
+ }

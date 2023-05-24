@@ -25,6 +25,8 @@ services:
       - 3000:3000
     networks:
       - network1
+    environment:
+      - PORT=3000
     command: ["npm", "start"]
 
 

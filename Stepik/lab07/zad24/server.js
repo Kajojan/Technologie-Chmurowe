@@ -3,8 +3,6 @@ const Redis = require("ioredis");
 const { Client } = require("pg");
 const app = express();
 
-
-
 const clientPG = new Client({
   host: "postgres",
   port: 5432,
@@ -12,6 +10,7 @@ const clientPG = new Client({
   user: "me",
   password: "password",
 });
+
 clientPG.connect();
 
 clientPG.query(

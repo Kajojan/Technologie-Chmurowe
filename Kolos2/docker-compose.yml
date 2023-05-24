@@ -1,0 +1,46 @@
+version: "3"
+services:
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - network1
+    ports:
+      - 27017:27017
+  app:
+    container_name: app
+    build: ./app
+    depends_on:
+      - "mongo"
+    ports:
+      - 3000:3000
+    networks:
+      - network1
+    command: ["npm", "start"]
+    healthcheck:
+      test: ["CMD", "node", "check.js"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    environment:
+      - PORT=3000
+      - MONGO_URI=mongodb://mongo:27017
+
+  nginx:
+    container_name: nginx
+    build: "./nginx"
+    ports:
+      - "80:80"
+    command: ["nginx", "-g", "daemon off;"]
+    depends_on:
+      - "app"
+
+networks:
+    network1:
+        external: false
+        name: network1
+volumes:
+  mongodb_data:
